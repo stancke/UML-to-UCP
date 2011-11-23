@@ -1,0 +1,131 @@
+* {
+	font-family: Verdana, Arial, Tahoma;
+	font-size: 12px;
+
+}
+body {
+	margin: 0 auto;
+	background-color: #87B6D9;
+}
+
+#fork-me {
+
+	position:fixed;
+	top:0;
+	right: 0;
+}
+
+header {
+	background-color: #87B6D9;
+}
+h1 {
+	color: white;
+	text-align: center;
+	font-size: 32px;
+	margin: 0;
+	padding: 0px;
+	margin: 25px 0 0 0;
+	text-shadow: 0px 1px #333;
+	opacity:1;
+	-moz-opacity: 1;
+	filter: alpha(opacity=1);
+}
+
+h1 span {
+	font-size: 32px;
+	font-family: cursive;
+}
+
+#center {
+	width: 100%;
+	text-align: center;
+}
+#center a {
+	text-align: center;
+	font-size:12px;
+	color: white;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	
+}
+
+center a :hover {
+	color: #EDEDEE;
+	text-decoration: none;
+	
+}
+
+center a :visited {
+	color: white;
+	font-weight: bold;
+	
+}
+
+footer {
+	background-color: #87B6D9;
+	bottom:0;height:100px;
+}
+
+
+.icone {
+	float: left;
+}
+#center {
+	font-size: 28px;
+	color: #98C1DE;
+	padding: 0px;
+	margin: 25px 0 0 0;
+	text-shadow: 0px 1px #333;
+	opacity:1;
+	-moz-opacity: 1;
+	filter: alpha(opacity=1);
+}
+h2 {
+	font-size: 22px;
+	color: #75ba78;
+	padding: 0px;
+	margin: 3px 0 0 0;
+	text-shadow: 1px 1px #333;
+}
+div#moldura {
+	width: 900px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	overflow:hidden;
+}
+div#footer, div#header {
+	width: 900px;
+	margin: 0 auto;
+	margin-top: 35px;
+	margin-bottom: 10px;
+}
+div#conteudo {
+	border-radius: 15px;
+	background: #FFF;
+	padding: 20px;
+	margin-bottom: 10px;
+	margin-top: 30px;
+	clear: both;
+	overflow:hidden;
+	min-height:350px;
+}
+legend {
+	padding: 1px 5px;
+}
+
+fieldset.ator, fieldset.caso-de-uso {
+	margin-bottom: 10px;
+	display: none;
+}
+fieldset.caso-de-uso select, fieldset.ator select {
+	width: 100px;
+}
+
+fieldset.caso-de-uso input {
+	width: 450px;
+}
+fieldset.ator input {
+	width: 500px;
+}
+
