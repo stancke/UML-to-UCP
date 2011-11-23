@@ -1,0 +1,174 @@
+/*
+    Copyright 2011, Wilian Stancke
+    Este programa é um software livre; você pode redistribui-lo e/ou 
+    modifica-lo dentro dos termos da Licença Pública Geral GNU como 
+    publicada pela Fundação do Software Livre (FSF); na versão 2 da 
+    Licença.
+*/
+var ucp;
+var UCP = jQuery.Class.create({
+	init: function()
+	{
+		ucp = this;
+		
+		$(document).ready(function(){
+			$("#tabs").tabs();
+			
+			$(".calendario").datepicker({
+				changeYear: true,
+				changeMonth: true,
+				yearRange: '1900:2010'
+			});
+			ucp.dialogs();
+			ucp.buttons();
+		});
+	},
+
+	dialogs: function()
+	{
+		$( ".dialogs_fatores" ).dialog({
+			autoOpen: false,
+			width: "500px"
+		});
+		$( ".dialogs" ).dialog({
+			autoOpen: false,
+			width: "500px"
+		});
+		$( "#dialog_sobre" ).dialog({
+			autoOpen: false,
+			width: "300px",
+			resizable: false
+		});
+		$( "#dialog_configuracao" ).dialog({
+			autoOpen: false,
+			width: "300px",
+			resizable: false
+		}); 
+
+		
+	},
+	
+	buttons: function()
+	{
+		
+
+		$("button#salvar").button({
+			icons: {
+				primary: "ui-icon-disk"
+			}
+		}).click(function(){
+			alert("click");
+			return false;
+		});
+
+		$( "#config" ).live("click",function() {
+			$( "#dialog_configuracao" ).dialog( "open" );
+			return false;
+		});
+		$( "#sobre" ).live("click",function() {
+			$( "#dialog_sobre" ).dialog( "open" );
+			return false;
+		});
+
+		$( ".help-ator" ).live("click",function() {
+			$( "#dialog_ator" ).dialog( "open" );
+			return false;
+		});
+
+		$( ".help-caso-de-uso" ).live("click",function() {
+			$( "#dialog_caso-de-uso" ).dialog( "open" );
+			return false;
+		});
+		
+		$("button#add-ator").button({
+			icons: {
+				primary: "ui-icon-plusthick"
+			}
+		}).click(function(){
+			$("fieldset.ator:first").clone().insertBefore("#add-ator").slideDown("slow");
+			return false;
+		});
+		
+		$("a.del-ator").live("click", function(){
+			$(this).parents("fieldset").fadeOut("slow", function(){
+				$(this).remove();
+			});
+		});
+
+		
+		$("button#add-caso-de-uso").button({
+			icons: {
+				primary: "ui-icon-plusthick"
+			}
+		}).click(function(){
+			$("fieldset.caso-de-uso:first").clone().insertBefore("#add-caso-de-uso").slideDown("slow");
+			return false;
+		});
+		
+		$("a.del-caso-de-uso").live("click", function(){
+			$(this).parents("fieldset").fadeOut("slow", function(){
+				$(this).remove();
+			});
+		});
+
+		$(".select-fatores-tecnicos, .select-fatores-ambientais").change(function(){
+			
+			var peso = parseFloat($(this).parent().next().html());
+			var classificacao = parseInt($(this).val());
+			var valor =  peso * classificacao;
+			$(this).parent().next().next().html(valor);
+		});
+
+		$("#resultado").click(function(){
+			
+			var soma_atores = 0;
+			$(".select-ator").each(function(index){
+				if(index != 0){
+					soma_atores += parseInt($(this).val());
+				}
+			});
+			var soma_casos_de_uso = 0;
+			$(".select-caso-de-uso").each(function(index){
+				if(index != 0){
+					soma_casos_de_uso += parseInt($(this).val());
+				}
+			});
+
+			var soma_fator_tecnico = 0;
+			$(".classificacao-ponderada-fat-tecnicos").each(function(){
+				soma_fator_tecnico += parseFloat($(this).html());
+
+			});
+			var soma_fator_ambiental = 0;
+			$(".classificacao-ponderada-fat-ambiental").each(function(){
+				soma_fator_ambiental += parseFloat($(this).html());
+
+			});
+
+			var TCF = 0.6 + (0.01 * soma_fator_tecnico);
+			var EF = 1.4 + (-0.03 * soma_fator_ambiental);
+
+			var UUCP = soma_atores + soma_casos_de_uso; 
+			var UCP = UUCP * TCF * EF;
+			UCP = ((Math.round(UCP*100))/100);
+			var HH = UCP * parseInt($("#hora-por-ucp").val());
+			var preco_por_ponto = parseInt($("#preco_por_ponto").val());
+			
+			TCF = ((Math.round(TCF*100))/100);
+			EF = ((Math.round(EF*100))/100);
+			HH = parseInt(((Math.round(HH*100))/100));
+
+			$("#ucp_sem_ajuste").val(UUCP);
+			$("#result_fator_tecnico").val(TCF);
+			$("#result_fator_ambiental").val(EF);
+			$("#ucp_ajustado").val(UCP);
+			$("#homem_hora").val(HH);
+			$("#preco_projeto").val(((Math.round((UCP * preco_por_ponto)*100))/100));
+			
+			
+
+		});
+		
+		
+	}
+});

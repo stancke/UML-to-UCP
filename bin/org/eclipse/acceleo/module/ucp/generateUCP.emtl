@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="generateUCP" nsURI="org::eclipse::acceleo::module::ucp::generateUCP" startHeaderPosition="338" endHeaderPosition="398">
+  <mtl:Module name="generateUCP" nsURI="org::eclipse::acceleo::module::ucp::generateUCP" endHeaderPosition="60">
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/3.0.0/UML#/"/>
     </input>
@@ -509,39 +509,39 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generateUCPmain">
-      <details key="start" value="426"/>
-      <details key="end" value="567"/>
-      <details key="line" value="13"/>
+      <details key="start" value="88"/>
+      <details key="end" value="229"/>
+      <details key="line" value="4"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateUCPmain/@body.0">
-      <details key="start" value="489"/>
-      <details key="end" value="555"/>
-      <details key="line" value="15"/>
+      <details key="start" value="151"/>
+      <details key="end" value="217"/>
+      <details key="line" value="6"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateUCPmain/@body.0/@body.0">
-      <details key="start" value="530"/>
-      <details key="end" value="545"/>
+      <details key="start" value="192"/>
+      <details key="end" value="207"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateUCPmain/@body.0/@body.0/u">
-      <details key="start" value="530"/>
-      <details key="end" value="531"/>
+      <details key="start" value="192"/>
+      <details key="end" value="193"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateUCPmain/@body.0/@body.1">
-      <details key="start" value="547"/>
-      <details key="end" value="548"/>
-      <details key="line" value="17"/>
+      <details key="start" value="209"/>
+      <details key="end" value="210"/>
+      <details key="line" value="8"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/generateUCPmain/@body.0/@fileUrl">
-      <details key="start" value="496"/>
-      <details key="end" value="519"/>
+      <details key="start" value="158"/>
+      <details key="end" value="181"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/generateUCPmain/u">
-      <details key="start" value="459"/>
-      <details key="end" value="468"/>
-      <details key="line" value="13"/>
+      <details key="start" value="121"/>
+      <details key="end" value="130"/>
+      <details key="line" value="4"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

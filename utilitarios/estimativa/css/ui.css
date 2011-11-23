@@ -1,0 +1,41 @@
+.btnUI {
+	padding: .4em 1em .4em 20px;
+	text-decoration: none;
+	position: relative;
+}
+.btnUI span.ui-icon {
+	margin: 0 5px 0 0;
+	position: absolute;
+	left: .2em;
+	top: 50%;
+	margin-top: -8px;
+	zoom: 1;
+}
+.btn {
+	padding: 2px 5px 2px 18px;
+	text-decoration: none;
+	position: relative;
+	font-weight: normal;
+	font-size: 11px;
+}
+.btn span.ui-icon {
+	margin: 0 5px 0 0;
+	position: absolute;
+	left: .1em;
+	top: 50%;
+	margin-top: -8px;
+	zoom: 1;
+}
+#dialog {
+	display: none;
+}
+#effect {
+	padding: 5px;
+	position: relative;
+}
+#effect h3 { margin: 0; margin-bottom: 5px; padding: 0.4em; text-align: center; }
+
+#janelaLogin { width: 350px; margin: auto; margin-top: 150px; padding: 5px; position: relative; }
+#janelaLogin h3 { margin: 0; padding: 0.4em; text-align: center; }
+
+#formLogin {margin: 5px;}
